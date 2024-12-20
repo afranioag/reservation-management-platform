@@ -1,0 +1,13 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: authouser
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8090/eureka'
+  instance:
+    hostname: localhost

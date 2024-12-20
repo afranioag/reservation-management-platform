@@ -1,0 +1,13 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: notification
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8090/eureka'
+  instance:
+    hostname: localhost
