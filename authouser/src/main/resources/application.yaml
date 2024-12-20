@@ -11,3 +11,8 @@ eureka:
       defaultZone: 'http://localhost:8090/eureka'
   instance:
     hostname: localhost
+
+reservation:
+  api:
+    url:
+      notification: 'http://localhost:8092/notifications'

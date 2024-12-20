@@ -2,6 +2,7 @@ package com.ead.notification.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ public class NotificationController {
 
     private static final Logger log = LoggerFactory.getLogger(NotificationController.class);
 
+    @Value(value = "${reservation.api.url.authuser}")
+    private String URL_AUTHOUSER;
+
     @GetMapping
     public ResponseEntity<Object> getNotifications() {
         Notification notification = new Notification();
@@ -26,7 +30,7 @@ public class NotificationController {
     @GetMapping(value = "/authusers")
     public ResponseEntity<Object> getAuthuser() {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Notification> responseEntity = restTemplate.exchange("http://localhost:8091/authusers", HttpMethod.GET, HttpEntity.EMPTY, Notification.class);
+        ResponseEntity<Notification> responseEntity = restTemplate.exchange(URL_AUTHOUSER, HttpMethod.GET, HttpEntity.EMPTY, Notification.class);
 
         return new ResponseEntity<>(responseEntity.getBody(), HttpStatus.OK);
     }

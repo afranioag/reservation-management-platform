@@ -11,3 +11,8 @@ eureka:
       defaultZone: 'http://localhost:8090/eureka'
   instance:
     hostname: localhost
+
+reservation:
+  api:
+    url:
+      authuser: 'http://localhost:8091/authusers'
