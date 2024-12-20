@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: authouser
+    name: authuser-service
 
 eureka:
   client:
@@ -15,4 +15,4 @@ eureka:
 reservation:
   api:
     url:
-      notification: 'http://localhost:8092/notifications'
+      notification: 'http://notification-service/notifications'
