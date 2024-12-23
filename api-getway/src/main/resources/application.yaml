@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-getway
+  cloud:
+    gateway:
+      routes:
+        - id: authuser-ead
+          uri: http://localhost:8081
+          predicates:
+            - Path=/authuser/**
+        - id: notification-ead
+          uri: http://localhost:8082
+          predicates:
+            - Path=/notification/**
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG

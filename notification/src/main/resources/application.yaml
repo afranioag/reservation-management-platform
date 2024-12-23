@@ -1,5 +1,7 @@
 server:
-  port: 8092
+  port: 8082
+  servlet:
+    context-path: /notification
 
 spring:
   application:
@@ -15,4 +17,4 @@ eureka:
 reservation:
   api:
     url:
-      authuser: 'http://authuser-service/authusers'
+      authuser: 'http://authuser-service/api/iam'

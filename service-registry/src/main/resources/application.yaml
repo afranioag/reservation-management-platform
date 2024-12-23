@@ -6,6 +6,11 @@ spring:
     name: service-registry
 
 eureka:
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false # Não registrar o próprio Eureka como cliente
+    fetch-registry: false       # Não buscar registros de outros Eureka Servers
+    service-url:
+      defaultZone: http://localhost:8761/eureka # Configuração válida para instância única
+

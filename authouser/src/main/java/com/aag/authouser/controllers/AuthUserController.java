@@ -14,17 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping(value = "/authusers")
+@RequestMapping(value = "/api")
 public class AuthUserController {
     private static final Logger log = LoggerFactory.getLogger(AuthUserController.class);
 
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${reservation.api.url.notification}")
-    private String URL_NOTIFICATION;
+    private String URL_NOTIFICATION = " ";
 
-    @GetMapping
+    @GetMapping(value = "/iam")
     public ResponseEntity<Object> getAuthUsers() {
         Notification notification = new Notification();
         notification.message = "Hello World. I am Authenticated User";

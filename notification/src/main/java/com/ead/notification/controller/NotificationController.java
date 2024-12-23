@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping(value = "/notifications", name = "CONTROLLER NOTIFICATION")
+@RequestMapping(value = "/api", name = "CONTROLLER NOTIFICATION")
 public class NotificationController {
     private static final Logger log = LoggerFactory.getLogger(NotificationController.class);
 
