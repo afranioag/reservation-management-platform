@@ -17,4 +17,4 @@ eureka:
 reservation:
   api:
     url:
-      authuser: 'http://authuser-service/api/iam'
+      authuser: 'http://authuser-service/authuser/api/iam'

@@ -8,13 +8,20 @@ spring:
     gateway:
       routes:
         - id: authuser-ead
-          uri: http://localhost:8081
+          uri: lb://AUTHUSER-SERVICE
           predicates:
             - Path=/authuser/**
         - id: notification-ead
-          uri: http://localhost:8082
+          uri: lb://NOTIFICATION-SERVICE
           predicates:
             - Path=/notification/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8090/eureka/'
+  instance:
+    hostname: localhost
 
 logging:
   level:

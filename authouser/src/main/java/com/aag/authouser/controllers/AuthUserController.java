@@ -21,7 +21,8 @@ public class AuthUserController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String URL_NOTIFICATION = " ";
+    @Value("${reservation.api.url.authuser}")
+    private String URL_NOTIFICATION ;
 
     @GetMapping(value = "/iam")
     public ResponseEntity<Object> getAuthUsers() {

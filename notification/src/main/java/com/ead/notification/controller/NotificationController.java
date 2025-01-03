@@ -22,7 +22,7 @@ public class NotificationController {
     @Value(value = "${reservation.api.url.authuser}")
     private String URL_AUTHOUSER;
 
-    @GetMapping
+    @GetMapping("/iam")
     public ResponseEntity<Object> getNotifications() {
         Notification notification = new Notification();
         notification.message = "Hello World. I am Notification Service";
@@ -30,7 +30,7 @@ public class NotificationController {
         return ResponseEntity.ok(notification);
     }
 
-    @GetMapping(value = "/authusers")
+    @GetMapping(value = "/authuser")
     public ResponseEntity<Object> getAuthuser() {
         ResponseEntity<Notification> responseEntity = restTemplate.exchange(URL_AUTHOUSER, HttpMethod.GET, HttpEntity.EMPTY, Notification.class);
 
